@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>suraj</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    /* Include your full CSS here */
+    /* ... [Same CSS as provided above — no changes made to image paths] ... */
+
+     * {
+      margin: 0;
+      padding: 0;
+      justify-content: center;
+      text-align: center;
+
+    }
+
+     header {
+      background: #333;
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ffcc00;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+      border: 1px solid rgb(255, 116, 116);
+      padding: 12px 14px;
+      border-radius: 5px;
+      align-items: center;
+      text-align: center;
+      justify-content: space-between;
+    }
+
+    nav a:hover {
+      color: white;
+      background-color:red;
+      border: none;
+      font-weight: bold;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background: white;
+      margin: 4px 0;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: #333;
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 0;
+        
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+    .container {
+      max-width: 1400px;
+      height: auto;
+      padding: 20px;
+      background-color: aqua;
+      display: flex;
+      flex-wrap: wrap;
+      margin: 50px;
+      align-items: center;
+      border-radius: 15px;
+      animation: slideRight 1.2s ease-out;
+      
+
+    }
+
+    .container img {
+      width: 300px;
+      height: auto;
+      margin-right: 20px;
+      border-radius: 50%;
+
+
+    }
+
+    .container .text {
+      font-size: 20px;
+      flex: 1;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    span {
+      color: rgb(60, 22, 197);
+      font-weight: bold;
+      font-size: 20px;
+      animation: raa 3s ease-in-out infinite;
+      padding: 15px;
+
+    }
+
+    @keyframes raa {
+      0% {
+        color: rgb(200, 255, 0);
+
+      }
+
+      50% {
+        color: purple;
+      }
+
+      100% {
+        color: darkred;
+      }
+    }
+
+    @keyframes slideLeft {
+      from {
+        transform: translateX(-50px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideRight {
+      from {
+        transform: translateX(50px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    .container:hover {
+      background-color: rgb(20, 163, 219);
+      transform: scale(1.0);
+    }
+
+    /* ---------------- NAVBAR ---------------- */
+   
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 40px;
+      animation: fadeIn 1.2s ease;
+    }
+
+    .card {
+      background-color: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, background-color 0.3s;
+
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      background-color: #fce4ec;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: #6200ea;
+    }
+
+    /* ---------------- CONTACT FORM ---------------- */
+    .contact {
+      background-color: #fff;
+      padding: 30px;
+      max-width: 600px;
+      margin: 50px auto;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      animation: slideRight 1.2s ease-out;
+    }
+
+    .contact h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .contact input,
+    .contact textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    .contact button {
+      background-color: #6200ea;
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .contact button:hover {
+      background-color: #3700b3;
+    }
+
+    .logo {
+      animation: fadein 3s ease-in-out infinite;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    @keyframes fadein {
+      0% {
+        color: red;
+      }
+
+      50% {
+        color: yellow;
+      }
+
+      100% {
+        color: darkorchid;
+      }
+    }
+
+    /* ---------------- FOOTER ---------------- */
+    footer {
+      background-color: #6200ea;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    /* ---------------- ANIMATIONS ---------------- */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideLeft {
+      from {
+        transform: translateX(-50px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideRight {
+      from {
+        transform: translateX(50px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+     /* Skills Section Styling */
+.skills-section {
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #111;
+  border-radius: 10px;
+  color: #fff;
+  text-align: center;
+}
+.skills-section h2 {
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: #00ffd5;
+}
+
+/* Individual skill block */
+.skill {
+  margin-bottom: 25px;
+  text-align: left;
+}
+.skill span {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Bar container */
+.bar {
+  width: 100%;
+  background: #333;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 18px;
+}
+
+/* Animated bar fill */
+.progress {
+  height: 100%;
+  background: linear-gradient(90deg, #00ffd5, #ff00cc);
+  width: 0;
+  animation: fillBar 2s forwards;
+  border-radius: 20px;
+}
+
+/* Animation */
+@keyframes fillBar {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--progress-width);
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .skills-section {
+    padding: 10px;
+  }
+  .skills-section h2 {
+    font-size: 1.5rem;
+  }
+}
+
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      padding: 30px;
+      color: blue;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+      animation: slideLeft 1.2s ease-out;
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .card:hover img {
+      transform: scale(1.1);
+    }
+
+    .card .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .card:hover .overlay {
+      opacity: 1;
+    }
+
+    button {
+      padding: 10px 13px;
+      font-size: 20px;
+      background-color: #14d4ee;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      gap: 20px;
+      cursor: pointer;
+    }
+
+    .pro-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 50px;
+      animation: slideLeft 1.2s ease-out;
+      border-radius: 5px;
+    }
+
+   
+
+    .card {
+      border: none;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card-img-top {
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .btn-animated {
+      transition: all 0.3s ease-in-out;
+    }
+
+    .btn-animated:hover {
+      transform: scale(1.1);
+      background-color: #0d6efd;
+      color: white;
+    }
+
+    /* Back to Top Button */
+    #topBtn {
+      position: fixed;
+      bottom: 40px;
+      right: 30px;
+      z-index: 99;
+      font-size: 22px;
+      border: none;
+      outline: none;
+      background-color: #0d6efd;
+      color: white;
+      cursor: pointer;
+      padding: 12px 16px;
+      border-radius: 50%;
+      display: none;
+      transition: all 0.4s ease;
+    }
+
+    #topBtn:hover {
+      background-color: #0b5ed7;
+      transform: scale(1.1);
+    }
+    
+    hr{
+      border: none;
+      height: 4px;
+      background-image: linear-gradient(90deg ,yellow,blue,red);
+      width: 90%;
+      border-radius: 4px;
+      margin: 24px  auto;
+    }
+    .carousel-caption {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5); /* translucent background */
+  padding: 20px;
+  border-radius: 10px;
+  animation: fadeInUp 2s ease-in-out;
+ 
+}
+
+.carousel-caption h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 2px 2px 5px black;
+  padding-bottom: 60px;
+}
+
+.carousel-caption p {
+  font-size: 1.2rem;
+  color: #f8f9fa;
+   text-align: center;
+    
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -30%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Mobile Responsive Text */
+@media (max-width: 768px) {
+  .carousel-caption.centered-text h3 {
+    font-size: 1.5rem;
+  }
+
+  .carousel-caption.centered-text p {
+    font-size: 1rem;
+  }
+}
+ hr{
+      border: none;
+      height: 4px;
+      background-image: linear-gradient(90deg ,rgb(27, 236, 121),blue,rgb(228, 14, 14));
+      width: 90%;
+      border-radius: 4px;
+      margin: 24px  auto;
+    }
+    
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <!-- Place this in your body or navbar -->
+<div class="logo">&lt;Bittu<span>/Suraj</span>&gt;</div>
+
+    
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <nav id="navbar">
+      <a href="#myCarousel">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+<h2 id="home" style="padding-bottom: 190px; justify-content: center; text-align: center; margin-top: 50px;" >Home</h2>
+<hr />
+ <!-- Carousel Section -->
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+
+    <!-- Slide 1 -->
+    <div class="carousel-item active">
+      <img src="https://plus.unsplash.com/premium_photo-1661404145138-aaa050241563?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        class="d-block w-100" alt="Concrete Testing" height="600px">
+      <div class="carousel-caption animated-text">
+        <h3>Concrete Testing</h3>
+        <p>Strong Foundations Start Here</p>
+        <h2 style="color: yellow; font-weight: bold;">	Creative Web Interfaces</h2>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="carousel-item">
+      <img src="https://images.unsplash.com/photo-1505238680356-667803448bb6?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        class="d-block w-100" alt="Bitumen Testing" height="600px">
+      <div class="carousel-caption animated-text">
+        <h3>Bitumen Testing</h3>
+        <p>Quality Roads Guaranteed</p>
+        <h2 style="color: rgb(73, 216, 37); font-weight: bold;padding-bottom: 120px;" >	Built with HTML, CSS & JS ,	React Developer</h2>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="carousel-item">
+      <img src="https://plus.unsplash.com/premium_photo-1661551362907-4eb4b55febce?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        class="d-block w-100" alt="Steel Testing"height="600px">
+      <div class="carousel-caption animated-text">
+        <h3>Steel Testing</h3>
+        <p>Strength That Lasts</p>
+        <h2 style="color: rgb(200, 255, 0); font-weight: bold;">	Modern UI/UX Expert</h2>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+<br>
+ <br>
+<hr />
+
+
+  <h2 id="about" style="margin: 40px;">About us</h2>
+  <div class="container" >
+    <img src="c:\Users\DK\OneDrive\Desktop\s.jpeg" alt="suraj">
+    <div class="flex justify-center space-x-6 mt-8">
+      <!-- Facebook -->
+      <a href="https://facebook.com" target="_blank"
+        class="text-gray-500 hover:text-blue-600 text-2xl transition transform hover:scale-125">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+
+      <!-- Twitter -->
+      <a href="https://twitter.com" target="_blank"
+        class="text-gray-500 hover:text-blue-400 text-2xl transition transform hover:scale-125">
+        <i class="fab fa-twitter"></i>
+      </a>
+
+      <!-- LinkedIn -->
+      <a href="https://linkedin.com" target="_blank"
+        class="text-gray-500 hover:text-blue-700 text-2xl transition transform hover:scale-125">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+
+      <!-- Instagram -->
+      <a href="https://instagram.com" target="_blank"
+        class="text-gray-500 hover:text-pink-500 text-2xl transition transform hover:scale-125">
+        <i class="fab fa-instagram"></i>
+      </a>
+
+      <!-- YouTube -->
+      <a href="https://youtube.com" target="_blank"
+        class="text-gray-500 hover:text-red-600 text-2xl transition transform hover:scale-125">
+        <i class="fab fa-youtube"></i>
+      </a>
+    </div>
+    <div class="text">
+      <p>I am Suraj<span>Frontend developer!</span>I create modern, interactive and responsive websites using HTML, CSS,
+        JavaScript, and React. Let's build something awesome together!</p>
+    </div>
+  </div>
+ 
+<hr />
+  <!-- 8 CARDS -->
+  <h2 id="projects">Projects</h2>
+  <section class="cards">
+    <div class="card">
+      <h3>HTML</h3>
+      <p>Structure your web pages with clean HTML5.</p>
+    </div>
+    <div class="card">
+      <h3>CSS</h3>
+      <p>Style with modern CSS and animations.</p>
+    </div>
+    <div class="card">
+      <h3>JavaScript</h3>
+      <p>Add interactivity and logic to web apps.</p>
+    </div>
+    <div class="card">
+      <h3>React</h3>
+      <p>Build reusable UI with React components.</p>
+    </div>
+    <div class="card">
+      <h3>Git & GitHub</h3>
+      <p>Version control and team collaboration.</p>
+    </div>
+    <div class="card">
+      <h3>Responsive Design</h3>
+      <p>Make websites work on all devices.</p>
+    </div>
+    <div class="card">
+      <h3>APIs</h3>
+      <p>Connect to external data and services.</p>
+    </div>
+    <div class="card">
+      <h3>UI/UX</h3>
+      <p>Design smooth and user-friendly interfaces.</p>
+    </div>
+    <div class="card">
+      <h3>Flatter </h3>
+      <p>Flatter mobile Design smooth and user-friendly interfaces.</p>
+    </div>
+    <div class="card">
+      <h3>Game & Animation design</h3>
+      <p> Graphical Design smooth and user-friendly interfaces.</p>
+    </div>
+  </section>
+<hr />
+  <!-- CONTACT FORM -->
+  <section class="contact" id="contact">
+    <h2>Contact Me</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+ <section class="skills-section" id="skills">
+  <h2>My Skills</h2>
+
+  <div class="skill">
+    <span>HTML</span>
+    <div class="bar"><div class="progress" style="width: 95%"></div></div>
+  </div>
+
+  <div class="skill">
+    <span>CSS</span>
+    <div class="bar"><div class="progress" style="width: 90%"></div></div>
+  </div>
+
+  <div class="skill">
+    <span>JavaScript</span>
+    <div class="bar"><div class="progress" style="width: 85%"></div></div>
+  </div>
+
+  <div class="skill">
+    <span>React</span>
+    <div class="bar"><div class="progress" style="width: 80%"></div></div>
+  </div>
+</section>
+
+<hr />
+  <h1>My Projects</h1>
+
+  <div class="container">
+
+    <div class="card">
+      <img
+        src="https://images.unsplash.com/photo-1604964432806-254d07c11f32?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Project 1">
+      <button>projects</button>
+      <div class="overlay">Project 1</div>
+    </div>
+
+    <div class="card">
+      <img
+        src="https://plus.unsplash.com/premium_photo-1661313630125-4280583e7f65?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Project 2">
+      <button>projects</button>
+      <div class="overlay">Project 2</div>
+    </div>
+
+    <div class="card">
+      <img
+        src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=872&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Project 3">
+      <button>projects</button>
+      <div class="overlay">Project 3</div>
+    </div>
+
+    <div class="card">
+      <img
+        src="https://images.unsplash.com/photo-1553390774-b4822481c894?q=80&w=444&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Project 4">
+      <button>projects</button>
+      <div class="overlay">Project 4</div>
+    </div>
+
+    <div class="card">
+      <img
+        src="https://images.unsplash.com/photo-1635830625698-3b9bd74671ca?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Project 5">
+      <button>projects</button>
+      <div class="overlay">Project 5</div>
+    </div>
+
+    <div class="card">
+      <img
+        src="https://images.unsplash.com/photo-1608306448197-e83633f1261c?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Project 6">
+      <button>projects</button>
+      <div class="overlay">Project 6</div>
+    </div>
+
+    <div class="card">
+      <img
+        src="https://images.unsplash.com/photo-1650295751050-b184e54e177c?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Project 7">
+      <button>projects</button>
+      <div class="overlay">Project 7</div>
+    </div>
+
+    <div class="card">
+      <img
+        src="https://images.unsplash.com/photo-1510751007277-36932aac9ebd?q=80&w=437&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Project 8">
+      <button>projects</button>
+      <div class="overlay">Project 8</div>
+    </div>
+  </div>
+<hr />
+  <h2 style="margin: 40px;">Resouces</h2>
+  <div class="pro-container">
+    <div class="card">
+      <img
+        src="https://images.unsplash.com/photo-1713947506242-8fcae733d158?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="software">
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat totam sunt voluptatummenda deserunt ad corporis magni reiciendis ut facere!</p>
+      <button>hire me</button>
+      <br>
+      <button>Resume</button>
+    </div>
+    <div class="card">
+      <img
+        src="https://images.unsplash.com/photo-1690264460165-0ff5e1063d86?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="software">
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero aliquid, labore magnambt explicabo earum cum,
+      </p>
+      <button>hire me</button>
+      <br>
+      <button>Resume</button>
+    </div>
+
+    <div class="card">
+      <img
+        src="https://images.unsplash.com/photo-1688561808434-886a6dd97b8c?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="software">
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero aliquid, labore magnambt explicabo earum cum,
+       ume
+        officiis?</p>
+      <button>hire me</button>
+      <br>
+      <button>Resume</button>
+    </div>
+    <div class="card">
+      <img
+        src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="software">
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero aliquid, labore magnambt explicabo earum cum,
+       nobis eum
+        officiis?</p>
+      <button>hire me</button>
+      <br>
+      <button>Resume</button>
+    </div>
+  </div>
+   <hr />
+  <div class="container py-5">
+    <div id="cardCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="row justify-content-center">
+            <div class="col-md-4">
+              <div class="card">
+                <img
+                  src="https://images.unsplash.com/photo-1602992708529-c9fdb12905c9?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  class="card-img-top" alt="Concrete Testing">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Concrete Testing</h5>
+                  <p class="card-text">We test concrete durability, strength, and more.</p>
+                  <a href="#" class="btn btn-outline-primary btn-animated">Read More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="row justify-content-center">
+            <div class="col-md-4">
+              <div class="card">
+                <img
+                  src="https://images.unsplash.com/photo-1490810194309-344b3661ba39?q=80&w=1148&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  class="card-img-top" alt="Bitumen Testing">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Bitumen Testing</h5>
+                  <p class="card-text">We test bitumen for roads and infrastructure quality.</p>
+                  <a href="#" class="btn btn-outline-primary btn-animated">Read More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <div class="row justify-content-center">
+            <div class="col-md-4">
+              <div class="card">
+                <img
+                  src="https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  class="card-img-top" alt="Steel Testing">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Steel Testing</h5>
+                  <p class="card-text">Ensure steel strength and standards compliance.</p>
+                  <a href="#" class="btn btn-outline-primary btn-animated">Read More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#cardCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#cardCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+  <!-- 🔼 Back to Top Button -->
+  <button onclick="scrollToTop()" id="topBtn" title="Go to top">↑</button>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Suraj | Frontend Developer. All rights reserved.</p>
+  </footer>
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Script for progress bar and top button -->
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const bars = document.querySelectorAll(".progress-bar");
+      bars.forEach((bar) => {
+        const value = bar.getAttribute("data-skill");
+        bar.style.width = value;
+      });
+    });
+    
+
+    window.onscroll = function () {
+      const btn = document.getElementById("topBtn");
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        btn.style.display = "block";
+      } else {
+        btn.style.display = "none";
+      }
+    };
+
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+
+
+        function toggleMenu() {
+      const nav = document.getElementById("navbar");
+      nav.classList.toggle("active");
+    }
+  </script>
+</body>
+
+</html>
